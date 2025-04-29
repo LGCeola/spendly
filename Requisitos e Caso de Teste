@@ -1,1 +1,56 @@
+Documento de Requisitos / Especificação Funcional
+Alunos: Francisco Marcelo Caetano Costa e Lucas Grimes Ceola
+Projeto: Controle de Despesas Pessoais
+Objetivo: Desenvolver um software simples para gerenciamento de gastos, permitindo registro, consulta e análise de despesas.
+Requisitos Funcionais (RF):
+  •	RF01: O sistema deve permitir adicionar uma nova despesa informando valor, categoria e data.
+  •	RF02: O sistema deve listar todas as despesas cadastradas.
+  •	RF03: O sistema deve permitir buscar despesas por categoria ou data.
+  •	RF04: O sistema deve remover uma despesa específica pelo seu índice na lista.
+Requisitos Não Funcionais (RNF):
+  •	RNF01: O sistema deve exibir o relatório de forma clara e formatada (data, valor em reais, categorias organizadas).
+  •	RNF02: O sistema deve ser simples de usar, com interface de menus clara.
+  •	RNF03: O tempo de resposta para adicionar, listar ou buscar despesas não deve ultrapassar 1 segundo.
+Classes:
+  •	Despesa: Armazena informações de uma despesa (valor, categoria, data).
+  •	Carteira: Gerencia todas as despesas do usuário e controla o saldo.
+Funcionalidades:
+1.	Adicionar despesa: Cadastro de novo gasto com valor, categoria e data.
+2.	Listar despesas: Exibe todas as despesas registradas.
+3.	Buscar por categoria: Permite encontrar despesas filtradas por categorias (ex.: alimentação, transporte).
+4.	Remover despesa: Exclui uma despesa pelo seu identificador.
+Controles de Fluxo:
+  •	If: Verifica se o saldo é suficiente ao adicionar uma nova despesa.
+  •	Loop: Percorre lista de despesas para exibir, buscar ou gerar relatórios.
+  •	Switch: Seleciona tipo de filtro (exibir todas, por categoria, por data).
 
+
+
+
+Plano de Testes
+Caso de Teste 1: Adicionar despesa e listardespesa
+  •	Objetivo: Verificar se uma nova despesa é corretamente adicionada e persistida.
+  •	Procedimento:
+1.	Clique no botão “Adicionar despesa”.
+2.	Informe: R$150,00, categoria: “Alimentação”, data: “10-04-2025”.
+  •	Resultado Esperado:
+1.	Despesa adicionada com sucesso.
+2.	Despesa aparece na listagem.
+Caso de Teste 2: Buscar despesas por categoria
+  •	Objetivo: Garantir que o filtro por categoria funcione corretamente.
+  •	Procedimento:
+1.	Adicionar três despesas: Alimentação (R$ 50), Transporte (R$ 30), Alimentação (R$ 70).
+2.	Buscar despesas na categoria "Alimentação".
+  •	Resultado Esperado:
+1.	Sistema lista 2 despesas (R$ 50 e R$ 70).
+Caso de Teste 3: Remover uma despesa existente
+  •	Objetivo: Verificar se o sistema remove corretamente uma despesa da carteira.
+  •	Procedimento:
+1.	Adicionar duas despesas:
+	R$ 100,00 – "Transporte" – 10/04/2025
+	R$ 50,00 – "Lazer" – 11/04/2025
+2.	Remover a despesa de "Transporte".
+3.	Listar despesas atuais.
+  •	Resultado Esperado:
+1.	Apenas a despesa de "Lazer" permanece listada.
+2.	A despesa de "Transporte" não aparece mais.
